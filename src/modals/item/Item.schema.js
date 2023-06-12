@@ -7,14 +7,7 @@ const ItemSchema = mongoose.Schema({
     default: false,
     require: true,
   },
-  slug: {
-    type: String,
-    maxLength: 120,
-    require: false,
-    unique: true,
-    index: 1,
-    default: '',
-  },
+
   price: {
     type: Number,
     max: 10000,

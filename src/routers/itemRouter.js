@@ -35,6 +35,37 @@ Router.get('/:slug?', async (req, res) => {
   }
 });
 
+// create new product for non multi part
+Router.post('/', async (req, res) => {
+  try {
+    // create slug
+
+    // const { title } = req.body;
+    // const slug = slugify(title, { lower: true });
+
+    const result = await createItem({ ...req.body });
+    if (result?._id) {
+      res.json({
+        status: 'success',
+        message: 'Item added',
+      });
+    }
+    res.json({
+      status: 'error',
+      message: 'Unable to add Item.',
+    });
+  } catch (error) {
+    let msg = error.message;
+    if (msg.includes('E11000 duplicate key error collection')) {
+      msg = 'The Item slug already exists.';
+    }
+    res.json({
+      status: 'error',
+      message: msg,
+    });
+  }
+});
+
 // Delete Item
 Router.delete('/:_id', async (req, res) => {
   try {

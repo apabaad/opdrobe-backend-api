@@ -1,0 +1,18 @@
+###get
+
+GET http://localhost:8000/api/v1/item
+
+
+###create item
+POST  http://localhost:8000/api/v1/item
+Content-Type: application/json
+
+{
+"title":"tshirtn",
+"price":5000,
+"qty":500,
+"brand":"pumax",
+"description":"best ccof the best",
+"categories":"electorronics",
+"images":""
+}
