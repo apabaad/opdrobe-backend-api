@@ -9,10 +9,10 @@ Content-Type: application/json
 
 {
 "title":"tshirtn",
-"price":5000,
-"qty":500,
+"price":500,
+"qty":10,
 "brand":"pumax",
-"description":"best ccof the best",
-"categories":"electorronics",
-"images":""
+"description":"best of the best",
+"categories":[],
+"images":[]
 }

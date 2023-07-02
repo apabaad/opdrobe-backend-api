@@ -1,13 +1,10 @@
 import express from 'express';
 const Router = express.Router();
+
 import {
   createItem,
   getItems,
-  getSingleItem,
-  getSingleItemByID,
-  updateItem,
   deleteItemById,
-  updateItemById,
 } from '../modals/item/Item.modal.js';
 
 // get all or single Item
@@ -35,19 +32,16 @@ Router.get('/:slug?', async (req, res) => {
   }
 });
 
-// create new product for non multi part
+// create new item
 Router.post('/', async (req, res) => {
   try {
-    // create slug
-
-    // const { title } = req.body;
-    // const slug = slugify(title, { lower: true });
-
-    const result = await createItem({ ...req.body });
+    const result = await createItem(req.body);
+    console.log(req.body);
     if (result?._id) {
       res.json({
         status: 'success',
         message: 'Item added',
+        data: { ...req.body },
       });
     }
     res.json({

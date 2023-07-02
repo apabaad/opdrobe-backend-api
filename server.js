@@ -3,6 +3,8 @@ import express from 'express';
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+app.use(express.json());
+
 //connect the mongodb
 import mongoClient from './src/config/db.js';
 mongoClient();
