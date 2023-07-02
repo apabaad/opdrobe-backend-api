@@ -1,3 +1,4 @@
+### ITEMS
 ###get
 
 GET http://localhost:8000/api/v1/item
@@ -16,3 +17,24 @@ Content-Type: application/json
 "categories":[],
 "images":[]
 }
+
+###delete item
+DELETE http://localhost:8000/api/v1/item/64a10700a0c436bf0e7bc962
+
+
+### USERS
+
+POST http://localhost:8000/api/v1/user
+Content-Type: application/json
+
+{
+"fname":"Sunayana",
+"lname":"Dahal",
+"dob":"01/05/2002",
+"email":"dahal@gmail.com",
+"phone":"667-678900",
+"password":"Jupyter123",
+"address":"Earth",
+"gender":"Female"
+}
+
