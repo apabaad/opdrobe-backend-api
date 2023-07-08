@@ -11,11 +11,12 @@ mongoClient();
 
 //load routers
 import itemRouter from './src/routers/itemRouter.js';
-
 import userRouter from './src/routers/userRouter.js';
+import userItemInteractionRouter from './src/routers/userItemInteractionRouter.js';
 
 app.use('/api/v1/item', itemRouter);
 app.use('/api/v1/user', userRouter);
+app.use('/api/v1/interaction', userItemInteractionRouter);
 
 app.listen(PORT, (error) => {
   if (error) {

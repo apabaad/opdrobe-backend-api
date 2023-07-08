@@ -38,3 +38,14 @@ Content-Type: application/json
 "gender":"Female"
 }
 
+### INTERACTIONS
+
+POST http://localhost:8000/api/v1/interaction
+Content-Type: application/json
+
+{
+    "userId":"1234",
+    "itemId":"64a8db04d51b2e6d9e41d530",
+    "interactionType":"viewed",
+    "rating":5
+}
